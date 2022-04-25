@@ -16,15 +16,15 @@ class TestClass
         Console.WriteLine (yk);
         using (var piv = new PivSession(yk))
         {
-            byte[] data = { 0xde, 0xad, 0xbe, 0xef };
+            byte[] data = { 0x53, 0x04, 0xde, 0xad, 0xbe, 0xef };
             PutDataCommand putDataCommand =
-                new PutDataCommand(0, data);
+                new PutDataCommand((int)PivDataTag.SecurityObject, data);
             PutDataResponse putDataResponse =
                 piv.Connection.SendCommand(putDataCommand);
 
             if (putDataResponse.StatusWord != SWConstants.Success)
             {
-                Console.WriteLine("error putting data");
+                Console.WriteLine("error putting data [{0}]: {1}", putDataResponse.StatusWord, putDataResponse.StatusMessage);
             }
         }
     }
