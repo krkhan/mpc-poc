@@ -18,7 +18,7 @@ class TestClass
         {
             byte[] data = { 0xde, 0xad, 0xbe, 0xef };
             PutDataCommand putDataCommand =
-                new PutDataCommand(PivDataTag.Retired1, data);
+                new PutDataCommand(0, data);
             PutDataResponse putDataResponse =
                 piv.Connection.SendCommand(putDataCommand);
 

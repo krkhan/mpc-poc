@@ -87,21 +87,42 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Yubico.Core/1.2.0": {
+      "System.Security.Principal.Windows/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "Yubico.Core/1.3.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
           "System.Memory": "4.5.4",
-          "Yubico.DotNetPolyfills": "1.2.0"
+          "System.Security.Principal.Windows": "5.0.0",
+          "Yubico.DotNetPolyfills": "1.3.1",
+          "Yubico.NativeShims": "1.3.1"
         },
         "compile": {
-          "lib/netstandard2.0/Yubico.Core.dll": {}
+          "lib/netstandard2.1/Yubico.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Yubico.Core.dll": {}
+          "lib/netstandard2.1/Yubico.Core.dll": {}
         }
       },
-      "Yubico.DotNetPolyfills/1.2.0": {
+      "Yubico.DotNetPolyfills/1.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Yubico.DotNetPolyfills.dll": {}
@@ -110,16 +131,65 @@
           "lib/netstandard2.1/Yubico.DotNetPolyfills.dll": {}
         }
       },
-      "Yubico.YubiKey/1.2.0": {
+      "Yubico.NativeShims/1.3.1": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x86/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "linux-x86"
+          },
+          "runtimes/osx-arm64/native/libYubico.NativeShims.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libYubico.NativeShims.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/ubuntu-arm64/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "ubuntu-arm64"
+          },
+          "runtimes/ubuntu-x64/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "ubuntu-x64"
+          },
+          "runtimes/ubuntu-x86/native/libYubico.NativeShims.so": {
+            "assetType": "native",
+            "rid": "ubuntu-x86"
+          },
+          "runtimes/win-arm64/native/Yubico.NativeShims.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/Yubico.NativeShims.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Yubico.NativeShims.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Yubico.YubiKey/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Yubico.Core": "1.2.0"
+          "Yubico.Core": "1.3.1"
         },
         "compile": {
-          "lib/netstandard2.0/Yubico.YubiKey.dll": {}
+          "lib/netstandard2.1/Yubico.YubiKey.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Yubico.YubiKey.dll": {}
+          "lib/netstandard2.1/Yubico.YubiKey.dll": {}
         }
       }
     }
@@ -306,47 +376,129 @@
         "version.txt"
       ]
     },
-    "Yubico.Core/1.2.0": {
-      "sha512": "Ak3MRZ0zIB9VD/5QnZ+Vo7wSHWG+x5RfPx0AGms9vovPtGjJAobxDnmGQnlpcujb9y/+VPRIBkQEBCWLXjyxAQ==",
+    "System.Security.Principal.Windows/5.0.0": {
+      "sha512": "t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "type": "package",
-      "path": "yubico.core/1.2.0",
+      "path": "system.security.principal.windows/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.Security.Principal.Windows.dll",
+        "lib/net461/System.Security.Principal.Windows.dll",
+        "lib/net461/System.Security.Principal.Windows.xml",
+        "lib/netstandard1.3/System.Security.Principal.Windows.dll",
+        "lib/netstandard2.0/System.Security.Principal.Windows.dll",
+        "lib/netstandard2.0/System.Security.Principal.Windows.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net46/System.Security.Principal.Windows.dll",
+        "ref/net461/System.Security.Principal.Windows.dll",
+        "ref/net461/System.Security.Principal.Windows.xml",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.dll",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/System.Security.Principal.Windows.dll",
+        "ref/netstandard1.3/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/de/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/es/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/fr/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/it/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ja/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ko/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ru/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Principal.Windows.xml",
+        "ref/netstandard2.0/System.Security.Principal.Windows.dll",
+        "ref/netstandard2.0/System.Security.Principal.Windows.xml",
+        "ref/uap10.0.16299/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/net46/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net461/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net461/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/uap10.0.16299/_._",
+        "system.security.principal.windows.5.0.0.nupkg.sha512",
+        "system.security.principal.windows.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Yubico.Core/1.3.1": {
+      "sha512": "u/ym87yFjHAtArzLqGtEGCR1R5FbKa6WA6bAsen4gZ3FL/6g/KLQbWGFNyii/mr+cVlBqf5M+0efnpczo7/tmA==",
+      "type": "package",
+      "path": "yubico.core/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "lib/netstandard2.0/Yubico.Core.dll",
         "lib/netstandard2.0/Yubico.Core.xml",
+        "lib/netstandard2.1/Yubico.Core.dll",
+        "lib/netstandard2.1/Yubico.Core.xml",
         "yubico-circle-y-mark.png",
-        "yubico.core.1.2.0.nupkg.sha512",
+        "yubico.core.1.3.1.nupkg.sha512",
         "yubico.core.nuspec"
       ]
     },
-    "Yubico.DotNetPolyfills/1.2.0": {
-      "sha512": "8C26AXcQjRcWOmLPXuT1HIRrYAdxuftpsyl0TaiRg0pSTt9k5o+2qbsgQGX4dv082KjIs5cjSBv3zdnP22mqVg==",
+    "Yubico.DotNetPolyfills/1.3.1": {
+      "sha512": "XIJCskt+y3pdp4ztfis/trrDqa5fV+hNeLtvRTUPEgN/sjxPzcC2P6NcpqkgwhTbSN09o2cGJEr5kxFYgIYfqg==",
       "type": "package",
-      "path": "yubico.dotnetpolyfills/1.2.0",
+      "path": "yubico.dotnetpolyfills/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "lib/netstandard2.0/Yubico.DotNetPolyfills.dll",
         "lib/netstandard2.1/Yubico.DotNetPolyfills.dll",
-        "yubico.dotnetpolyfills.1.2.0.nupkg.sha512",
+        "yubico.dotnetpolyfills.1.3.1.nupkg.sha512",
         "yubico.dotnetpolyfills.nuspec"
       ]
     },
-    "Yubico.YubiKey/1.2.0": {
-      "sha512": "aDJE2nj8W8VlyEAYh4Ve3sZjA6HFU3KysO2I6qEyvsfR1Fca1M7TGnfTfqsKgU7+gy509YFE80cjz/5eXHpIOw==",
+    "Yubico.NativeShims/1.3.1": {
+      "sha512": "5uGWJNmI154ZWv6HaNaO+Y6eEj4bW+jhp1mJZpKJWJtrCzbG8AhQ9cxJF81qiQFhQzfdU0fosL7vnwnq48g0Qg==",
       "type": "package",
-      "path": "yubico.yubikey/1.2.0",
+      "path": "yubico.nativeshims/1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "runtimes/linux-arm64/native/libYubico.NativeShims.so",
+        "runtimes/linux-x64/native/libYubico.NativeShims.so",
+        "runtimes/linux-x86/native/libYubico.NativeShims.so",
+        "runtimes/osx-arm64/native/libYubico.NativeShims.dylib",
+        "runtimes/osx-x64/native/libYubico.NativeShims.dylib",
+        "runtimes/ubuntu-arm64/native/libYubico.NativeShims.so",
+        "runtimes/ubuntu-x64/native/libYubico.NativeShims.so",
+        "runtimes/ubuntu-x86/native/libYubico.NativeShims.so",
+        "runtimes/win-arm64/native/Yubico.NativeShims.dll",
+        "runtimes/win-x64/native/Yubico.NativeShims.dll",
+        "runtimes/win-x86/native/Yubico.NativeShims.dll",
+        "yubico.nativeshims.1.3.1.nupkg.sha512",
+        "yubico.nativeshims.nuspec"
+      ]
+    },
+    "Yubico.YubiKey/1.3.1": {
+      "sha512": "fnoJUcNLayYhQLWsxNgdN5E1VsEnTfy+ui1BDrZ0eo338l37z5SnmaysF5YFaLiY4cffzoB9N4hZEFlfPE6dMA==",
+      "type": "package",
+      "path": "yubico.yubikey/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "lib/netstandard2.0/Yubico.YubiKey.dll",
         "lib/netstandard2.0/Yubico.YubiKey.xml",
+        "lib/netstandard2.1/Yubico.YubiKey.dll",
+        "lib/netstandard2.1/Yubico.YubiKey.xml",
         "yubico-circle-y-mark.png",
-        "yubico.yubikey.1.2.0.nupkg.sha512",
+        "yubico.yubikey.1.3.1.nupkg.sha512",
         "yubico.yubikey.nuspec"
       ]
     }
@@ -354,7 +506,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.Bcl.HashCode >= 1.1.1",
-      "Yubico.YubiKey >= 1.2.0"
+      "Yubico.YubiKey >= 1.3.1"
     ]
   },
   "packageFolders": {
@@ -400,7 +552,7 @@
           },
           "Yubico.YubiKey": {
             "target": "Package",
-            "version": "[1.2.0, )"
+            "version": "[1.3.1, )"
           }
         },
         "imports": [
