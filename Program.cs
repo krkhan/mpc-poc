@@ -16,6 +16,7 @@ class TestClass
         Console.WriteLine (yk);
         using (var piv = new PivSession(yk))
         {
+            piv.KeyCollector = _ => true;
             byte[] data = { 0x53, 0x04, 0xde, 0xad, 0xbe, 0xef };
             PutDataCommand putDataCommand =
                 new PutDataCommand((int)PivDataTag.SecurityObject, data);
